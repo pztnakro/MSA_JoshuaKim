@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MsaJoshuaKim.StoredList">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Refresh" Clicked="Retrieve_Data" />
+    </ContentPage.ToolbarItems>
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness" iOS="0, 20, 0, 0" />
+    </ContentPage.Padding>
+    <ContentPage.Content>
+        <StackLayout>
+            <ListView x:Name="FaceList" HasUnevenRows="True">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="{Binding analyzeFace}"
+                                     LineBreakMode="NoWrap"
+                                    Style="{DynamicResource ListItemDetailTextStyle}"
+                                    FontSize="20" XAlign="Start"/>
+                                <Label Text="{Binding storeDate}" LineBreakMode="NoWrap"
+                                    Style="{DynamicResource ListItemTextStyle}"
+                                    FontSize="11" XAlign="End"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
